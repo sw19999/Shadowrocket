@@ -126,7 +126,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
               "wenyisheng", // 问医生 1-2-3
               "jijianfuwu", // 寄件服务 1-2-5
               "zhuanzuanhongbao", // 天天赚红包 2-2-1
-              "huanletaojin" // 欢乐淘金 2-2-2
+              // "huanletaojin" // 欢乐淘金 2-2-2
             ];
             let node = floor.data.nodes;
             if (node?.[0]?.length > 0) {

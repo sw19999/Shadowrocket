@@ -82,7 +82,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
         // "keyToolsFloor", // 浏览记录
         // "newAttentionCard", // 关注的频道
         "newBigSaleFloor", // 双十一
-        "newStyleAttentionCard", // 新版关注的频道
+        // "newStyleAttentionCard", // 新版关注的频道
         // "newWalletIdFloor", // 我的钱包
         "newsFloor", // 京东快讯
         "noticeFloor", // 顶部横幅

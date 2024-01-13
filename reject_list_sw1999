@@ -1,0 +1,7 @@
+#!name=reject_list_sw1999
+#!homepage=https://github.com/sw19999/Shadowrocket
+#!desc=2024/01/13 by sw1999
+[Rule]
+DOMAIN,adstvb.akamaized.net,REJECT
+DOMAIN,edge.akamai.ads.tvb.com,REJECT
+#RULE-SET,https://whatshub.top/rule/AntiAD.list,REJECT

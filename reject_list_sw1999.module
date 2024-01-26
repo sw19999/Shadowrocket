@@ -4,5 +4,4 @@
 [Rule]
 DOMAIN,adstvb.akamaized.net,REJECT
 DOMAIN,edge.akamai.ads.tvb.com,REJECT
-DOMAIN-SUFFIX,sw1999.free.hr,DIRECT
 #RULE-SET,https://whatshub.top/rule/AntiAD.list,REJECT

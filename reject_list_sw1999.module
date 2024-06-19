@@ -6,11 +6,4 @@ DOMAIN,adstvb.akamaized.net,REJECT
 DOMAIN,edge.akamai.ads.tvb.com,REJECT
 DOMAIN-SUFFIX,now.com,PROXY
 DOMAIN-SUFFIX,cloudfront.net,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/wlxuf/add_rule/main/ChatGPT.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TVB/TVB.list,PROXY
-# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list,PROXY
 # RULE-SET,https://whatshub.top/rule/AntiAD.list,REJECT

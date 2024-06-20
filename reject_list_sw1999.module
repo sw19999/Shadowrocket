@@ -1,9 +1,20 @@
 #!name=reject_list_sw1999
 #!homepage=https://github.com/sw19999/Shadowrocket
-#!desc=2024/06/12 by sw1999
+#!desc=2024/06/20 by sw1999
 [Rule]
 DOMAIN,adstvb.akamaized.net,REJECT
 DOMAIN,edge.akamai.ads.tvb.com,REJECT
 DOMAIN-SUFFIX,now.com,PROXY
 DOMAIN-SUFFIX,cloudfront.net,PROXY
+DOMAIN-KEYWORD,appspot,PROXY
+DOMAIN-KEYWORD,blogspot,PROXY
+DOMAIN-KEYWORD,gmail,PROXY
+DOMAIN-KEYWORD,google,PROXY
 # RULE-SET,https://whatshub.top/rule/AntiAD.list,REJECT
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/wlxuf/add_rule/main/ChatGPT.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TVB/TVB.list,PROXY
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list,PROXY

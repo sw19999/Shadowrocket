@@ -1,11 +1,61 @@
 #!name=酷我音乐VIP
-#!desc=调用Yuheng0101脚本，解锁VIP，最高支持音质：超品音质
+#!desc=调用Yuheng0101脚本解锁VIP，使用可莉去广告，最高支持音质：无损音质
 #!author=sw1999
-#!date=2024-06-06
+#!author=Yuheng0101[https://github.com/Yuheng0101], 可莉 [https://github.com/luestr]
+#!date=2024-10-21  可莉去广告版本 2024-07-18
+
+[Rule]
+DOMAIN,g.koowo.com,REJECT
+DOMAIN,rich.kuwo.cn,REJECT
+# 拦截HTTPDNS
+DOMAIN,serveraddr.service.kugou.com,REJECT
+DOMAIN,twns.p2ptun.qq.com,REJECT
+DOMAIN,tp2p.kg.qq.com,REJECT
+IP-CIDR,81.71.61.216/32,REJECT,no-resolve
+# 腾讯优量汇 - 广告服务商
+DOMAIN,ios.bugly.qq.com,REJECT
+DOMAIN,sdk.e.qq.com,REJECT
+DOMAIN,us.l.qq.com,REJECT
+DOMAIN-SUFFIX,ugdtimg.com,REJECT
+# DOMAIN, qzs.gdtimg.com, REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+# c2.gdt.qq.com, REJECT
+DOMAIN,tmeadcomm.y.qq.com,REJECT
+DOMAIN,mobilead.kuwo.cn,REJECT
+DOMAIN,adstats.tencentmusic.com,REJECT
+DOMAIN,adsmind.gdtimg.com,REJECT
+DOMAIN,ad.tencentmusic.com,REJECT
+DOMAIN,mc.tencentmusic.com,REJECT
+# 广告配置
+URL-REGEX,"^http:\/\/rich\.kuwo\.cn\/AdService\/",REJECT-DICT
+URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/user\/freeMode\/",REJECT-DICT
+URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/pasterAdvert\/",REJECT-DICT
+URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/startup\/config",REJECT-DICT
+URL-REGEX,"^http:\/\/rich\.kuwo\.cn\/EcomResourceServer\/",REJECT-DICT
+IP-CIDR,111.206.98.63/32,REJECT,no-resolve
+# 搜索填充词
+URL-REGEX,"^http:\/\/searchrecterm\.kuwo\.cn\/recterm\.s",REJECT-DICT
+# 精简我的页面侧边栏
+URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/newMenuList\/menuListInfo",REJECT-DICT
+# 迷你播放器横幅
+URL-REGEX,"^http:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox",REJECT-DICT
+# 听书页面广告
+URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/",REJECT-DICT
+
+[URL Rewrite]
+# 首页 - 推广语
+^https:\/\/vip\d\.kuwo\.cn\/commercia\/vipconf\/projectPage\/getPageContent - reject-dict
+^https:\/\/tingshu\.kuwo\.cn\/v2\/api\/pay\/user\/info - reject-dict
+# 我的页面横幅
+^https:\/\/appi\.kuwo\.cn\/kuwopay\/personal\/cells - reject-dict
 
 [Script]
-酷我音乐SVIP = type=http-response, pattern=^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, timeout=60
-波点音乐VIP = type=http-response,pattern=^https:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users|play\/listening\/user|service\/(home\/index|banner\/myPage|advert\/watch)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bodian.js
+# 会员
+酷我音乐会员 = type=http-response, pattern=^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, timeout=60
+
+# 移除听书页面广告
+移除听书页面广告 = type=http-response, pattern=^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio, script-path=https://kelee.one/Resource/Script/Kuwo/Kuwo_remove_ads.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% *.kuwo.cn, bd-api.kuwo.cn, *.lrts.me
+hostname = %APPEND% appi.kuwo.cn, mc.tencentmusic.com, vip*.kuwo.cn, tingshu.kuwo.cn, *.kuwo.cn
+

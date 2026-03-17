@@ -1,0 +1,9 @@
+#!name=水印相机
+#!desc=2026-01-12 15:07:47
+#!icon=https://github.com/sw19999/Shadowrocket/blob/main/Loon/syxj.jpeg
+
+[Rewrite]
+^https?:\/\/api\.xiangji\.qq\.com\/splash$ - reject-dict
+
+[MITM]
+hostname = api.xiangji.qq.com

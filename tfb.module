@@ -1,0 +1,8 @@
+#!name=淘粉吧
+#!desc=2026-04-18 17:00:00
+
+[URL Rewrite]
+^https?:\/\/y\.taofen8\.com\/ad.*\.zip$ - reject
+
+[MITM]
+hostname = %APPEND% y.taofen8.com

@@ -4,7 +4,7 @@
 #!author = sw1999
 
 [Rewrite]
-^https?:\/\/y\.taofen8\.com\/ad.*\.zip$ - reject
+^https?:\/\/y\.taofen8\.com\/.*\.zip$ - reject
 
 [MITM]
 hostname = y.taofen8.com

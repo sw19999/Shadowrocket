@@ -5,6 +5,7 @@
 
 [Rewrite]
 ^https?:\/\/y\.taofen8\.com\/.*\.zip$ - reject
+^https?:\/\/y\.taofen8\.com\/.*\.webp$ - reject
 
 [MITM]
 hostname = y.taofen8.com

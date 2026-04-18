@@ -1,0 +1,9 @@
+#!name=淘粉吧
+#!desc=2026-04-18 18:00:00
+#!icon=https://github.com/sw19999/Shadowrocket/blob/main/Loon/tfb.jpeg
+
+[Rewrite]
+^https?:\/\/y\.taofen8\.com\/ad.*\.zip$ - reject
+
+[MITM]
+hostname = y.taofen8.com

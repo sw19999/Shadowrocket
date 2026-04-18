@@ -2,8 +2,8 @@
 #!desc=2026-04-18 17:00:00
 
 [URL Rewrite]
-^https?:\/\/y\.taofen8\.com\/.*\.zip$ - reject
-^https?:\/\/y\.taofen8\.com\/.*\.webp$ - reject
+^https?:\/\/y\.taofen8\.com\/.*\.zip$ - reject-dict
+^https?:\/\/y\.taofen8\.com\/.*\.webp$ - reject-dict
 
 [MITM]
 hostname = %APPEND% y.taofen8.com

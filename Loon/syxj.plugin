@@ -1,6 +1,6 @@
 #!name=水印相机
 #!desc=2026-01-12 15:00:00
-icon=https://github.com/sw19999/Shadowrocket/blob/main/Loon/syxj.jpeg
+icon=https://raw.githubusercontent.com/sw19999/Shadowrocket/refs/heads/main/Loon/syxj.jpeg
 
 [Rewrite]
 ^https?:\/\/api\.xiangji\.qq\.com\/splash$ - reject-dict
